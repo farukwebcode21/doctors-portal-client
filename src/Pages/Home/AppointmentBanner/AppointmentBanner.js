@@ -16,7 +16,7 @@ const AppointmentBanner = () => {
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <img
-                        style={{width:400, marginTop: '-110px'}}
+                        style={{width:450, marginTop: '-110px'}}
                         src={doctor} alt="" />
                 </Grid>
                 <Grid item xs={12} md={6}
@@ -28,13 +28,13 @@ const AppointmentBanner = () => {
                     }}
                 >
                      <Box>
-                        <Typography variant="h6" sx={{ mb: 5 }} style={{ color: '#5CE7ED' }}>
+                        <Typography variant="h6" sx={{ mb: 3, mt:5 }} style={{ color: '#5CE7ED' }}>
                             Appointment
                         </Typography>
                         <Typography variant="h4" style={{ color: 'white' }}>
-                            Make an Appointment Today
+                            Make an Appointment<br/> Today
                         </Typography>
-                        <Typography variant="h6" sx={{ my: 5 }} style={{ color: 'white', fontSize: 14, fontWeight: 300 }}>
+                        <Typography variant="h6" sx={{ my: 3 }} style={{ color: 'white', fontSize: 14, fontWeight: 300 }}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi facere totam aliquam praesentium vel. Amet veniam odio vero doloremque laborum.
                         </Typography>
                         <Button variant="contained" style={{ backgroundColor: '#5CE7ED' }}>Learn More</Button>

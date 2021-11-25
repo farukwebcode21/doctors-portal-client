@@ -5,6 +5,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
+import { Button } from '@mui/material';
 
 const style = {
   position: 'absolute',
@@ -19,8 +20,14 @@ const style = {
 };
 
 
-const BookingModal = ({ openBooking, handleBookingClose, booking }) => {
-    const { name, time } = booking;
+const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
+  const { name, time } = booking;
+  const handleBookingSubmit = (e) => {
+    alert('submitting');
+    handleBookingClose();
+    e.preventDefault();
+
+  }
 
     return (
         <Modal
@@ -39,7 +46,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking }) => {
             <Typography id="transition-modal-title" variant="h6" component="h2">
               {name}
             </Typography>
-            <form>
+            <form onSubmit={handleBookingSubmit}>
               <TextField
                 disabled
                 sx={{width:'95%', m:1}}
@@ -62,15 +69,17 @@ const BookingModal = ({ openBooking, handleBookingClose, booking }) => {
               <TextField
                 sx={{width:'95%', m:1}}
                 id="outlined-size-small"
-                defaultValue={time}
+                defaultValue="phone number"
                 size="small"
               />
               <TextField
-                sx={{width:'95%', m:1}}
+                disabled
+                sx={{width:'90%', m:1}}
                 id="outlined-size-small"
-                defaultValue={time}
+                defaultValue={date.toDateString()}
                 size="small"
               />
+              <Button type="submit" variant="contained">Submit</Button>
             </form>
 
           </Box>
